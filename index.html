@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alta Impacto Digital — +1.000 Programas Premium para Windows</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Barlow:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e82020;
+    --red-dark: #b01515;
+    --gold: #c9a227;
+    --gold-light: #f0c84a;
+    --black: #080808;
+    --dark: #111111;
+    --dark2: #181818;
+    --dark3: #222222;
+    --white: #f5f5f5;
+    --gray: #888;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8,8,8,0.95);
+    border-bottom: 1px solid rgba(232,32,32,0.3);
+    backdrop-filter: blur(10px);
+    padding: 14px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo { height: 48px; }
+  .nav-cta {
+    background: var(--red);
+    color: #fff;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .nav-cta:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(232,32,32,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(232,32,32,0.15);
+    border: 1px solid rgba(232,32,32,0.5);
+    color: #ff6b6b;
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 9vw, 110px);
+    line-height: 0.95;
+    letter-spacing: 2px;
+    animation: fadeUp 0.6s 0.1s ease both;
+  }
+  .hero h1 span { color: var(--red); }
+  .hero h1 em { color: var(--gold); font-style: normal; }
+  .hero-sub {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: rgba(245,245,245,0.65);
+    max-width: 640px;
+    line-height: 1.6;
+    margin: 24px auto 40px;
+    font-weight: 300;
+    animation: fadeUp 0.6s 0.2s ease both;
+  }
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.6s 0.3s ease both; }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #ff2b2b; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,32,32,0.4); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--gold);
+    padding: 16px 40px;
+    border: 1.5px solid var(--gold);
+    border-radius: 4px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+  .btn-secondary:hover { background: rgba(201,162,39,0.1); transform: translateY(-2px); }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--dark2);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 32px;
+    text-align: center;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: var(--red);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--gold); }
+  .stat-label {
+    font-size: 13px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 6px;
+  }
+
+  /* ── SECTION ── */
+  section { padding: 90px 5%; }
+  .section-tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 5vw, 62px);
+    letter-spacing: 1px;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+  .section-title em { color: var(--gold); font-style: normal; }
+  .section-sub { color: rgba(245,245,245,0.55); font-size: 16px; max-width: 560px; line-height: 1.7; }
+
+  /* ── CATEGORIES ── */
+  .categories-header { text-align: center; margin-bottom: 60px; }
+  .categories-header .section-sub { margin: 0 auto; }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .cat-card {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.25s;
+    cursor: pointer;
+  }
+  .cat-card:hover {
+    border-color: rgba(232,32,32,0.5);
+    background: rgba(232,32,32,0.07);
+    transform: translateY(-4px);
+  }
+  .cat-icon { font-size: 36px; margin-bottom: 14px; display: block; }
+  .cat-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.5px; }
+  .cat-count { font-size: 12px; color: var(--gray); margin-top: 4px; }
+
+  /* ── WHY ── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .why-features { display: flex; flex-direction: column; gap: 28px; }
+  .why-item { display: flex; gap: 18px; align-items: flex-start; }
+  .why-icon {
+    width: 48px; height: 48px; min-width: 48px;
+    background: rgba(232,32,32,0.12);
+    border: 1px solid rgba(232,32,32,0.3);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .why-text h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 18px; margin-bottom: 6px; }
+  .why-text p { font-size: 14px; color: rgba(245,245,245,0.55); line-height: 1.6; }
+  .why-visual {
+    background: var(--dark2);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 40px 32px;
+    text-align: center;
+  }
+  .big-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 120px;
+    color: var(--red);
+    line-height: 1;
+  }
+  .big-label { font-size: 22px; color: var(--gold); font-family: 'Rajdhani', sans-serif; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+  .big-sub { font-size: 13px; color: var(--gray); margin-top: 12px; line-height: 1.7; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px; }
+  .tag {
+    background: rgba(255,255,255,0.06);
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 12px;
+    color: rgba(245,245,245,0.6);
+    letter-spacing: 0.5px;
+  }
+
+  /* ── PRICING ── */
+  .pricing-section { background: var(--dark2); }
+  .pricing-header { text-align: center; margin-bottom: 60px; }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .price-card {
+    background: var(--dark3);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 36px 32px;
+    position: relative;
+    transition: transform 0.25s;
+  }
+  .price-card:hover { transform: translateY(-4px); }
+  .price-card.featured {
+    border-color: var(--red);
+    background: linear-gradient(135deg, rgba(232,32,32,0.1) 0%, var(--dark3) 60%);
+  }
+  .popular-badge {
+    position: absolute;
+    top: -14px; left: 50%; transform: translateX(-50%);
+    background: var(--red);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 5px 18px;
+    border-radius: 100px;
+  }
+  .plan-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-bottom: 16px; }
+  .plan-price { font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 1; }
+  .plan-price small { font-size: 22px; color: var(--gray); }
+  .plan-period { font-size: 13px; color: var(--gray); margin-top: 4px; margin-bottom: 28px; }
+  .plan-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .plan-features li { font-size: 14px; color: rgba(245,245,245,0.75); display: flex; align-items: center; gap: 10px; }
+  .plan-features li::before { content: '✓'; color: var(--red); font-weight: 700; font-size: 16px; min-width: 16px; }
+  .btn-plan {
+    display: block; width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+  .btn-plan-outline { background: transparent; border: 1.5px solid rgba(255,255,255,0.2); color: var(--white); }
+  .btn-plan-outline:hover { border-color: var(--white); }
+  .btn-plan-red { background: var(--red); color: #fff; }
+  .btn-plan-red:hover { background: #ff2b2b; box-shadow: 0 6px 24px rgba(232,32,32,0.4); }
+
+  /* ── GUARANTEE ── */
+  .guarantee-strip {
+    background: rgba(201,162,39,0.08);
+    border: 1px solid rgba(201,162,39,0.25);
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .guarantee-icon { font-size: 64px; min-width: 80px; text-align: center; }
+  .guarantee-text h3 { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 24px; color: var(--gold); margin-bottom: 8px; }
+  .guarantee-text p { font-size: 15px; color: rgba(245,245,245,0.65); line-height: 1.7; }
+
+  /* ── FAQ ── */
+  .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .faq-q {
+    width: 100%; background: none; border: none; color: var(--white);
+    font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 17px;
+    text-align: left; padding: 22px 0;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-arrow { font-size: 20px; transition: transform 0.3s; min-width: 20px; }
+  .faq-item.open .faq-arrow { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 14px; color: rgba(245,245,245,0.6); line-height: 1.8;
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding-bottom: 20px; }
+
+  /* ── CTA FINAL ── */
+  .cta-final {
+    text-align: center;
+    padding: 100px 5%;
+    background: var(--dark2);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-final::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(232,32,32,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-final h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(42px, 7vw, 80px); margin-bottom: 20px; }
+  .cta-final h2 em { color: var(--red); font-style: normal; }
+  .cta-final p { color: rgba(245,245,245,0.6); font-size: 17px; max-width: 500px; margin: 0 auto 40px; line-height: 1.7; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 40px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-logo { height: 36px; }
+  .footer-text { font-size: 13px; color: var(--gray); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 13px; color: var(--gray); text-decoration: none; }
+  .footer-links a:hover { color: var(--white); }
+
+  /* ── ANIM ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .why-grid { grid-template-columns: 1fr; }
+    .guarantee-strip { flex-direction: column; text-align: center; }
+    .cat-grid { grid-template-columns: repeat(2, 1fr); }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ── TICKER ── */
+  .ticker-wrap {
+    background: var(--red);
+    overflow: hidden;
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+  .ticker-inner {
+    display: inline-flex;
+    animation: ticker 20s linear infinite;
+    gap: 60px;
+  }
+  .ticker-inner span {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* highlight numbers on scroll */
+  .count-anim { transition: color 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <img src="ChatGPT_Image_12_de_abr__de_2026__14_06_16.png" alt="Alta Impacto Digital" class="nav-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+  <div style="display:none; font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:2px;"><span style="color:#fff">Alta</span><span style="color:#e82020">Impacto</span> <span style="color:#c9a227; font-size:14px; letter-spacing:3px;">DIGITAL</span></div>
+  <a href="https://pay.hotmart.com/R105337441C" target="_blank" class="nav-cta">Comprar Agora</a>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker-wrap" style="margin-top:76px;">
+  <div class="ticker-inner">
+    <span>✦ +1.000 Programas Premium</span>
+    <span>✦ 100% Original e Ativado</span>
+    <span>✦ Entrega Imediata</span>
+    <span>✦ Suporte Incluso</span>
+    <span>✦ Garantia de 7 Dias</span>
+    <span>✦ +1.000 Programas Premium</span>
+    <span>✦ 100% Original e Ativado</span>
+    <span>✦ Entrega Imediata</span>
+    <span>✦ Suporte Incluso</span>
+    <span>✦ Garantia de 7 Dias</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🔥 Oferta Exclusiva — Tempo Limitado</div>
+  <h1>+1.000<br><span>Programas</span><br><em>Premium</em><br>Para Windows</h1>
+  <p class="hero-sub">Acesse uma biblioteca gigante com os melhores softwares para Windows — todos originais, ativados e prontos para usar. Uma única compra, acesso vitalício.</p>
+  <div class="hero-btns">
+    <a href="https://pay.hotmart.com/R105337441C" target="_blank" class="btn-primary">🛒 Compre Agora</a>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-num">1<span>K+</span></div>
+    <div class="stat-label">Programas disponíveis</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--gold)">5<span style="color:var(--gold)">K+</span></div>
+    <div class="stat-label">Clientes Satisfeitos</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">7</div>
+    <div class="stat-label">Dias de Garantia</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num" style="color:var(--gold)">24<span style="color:var(--gold)">h</span></div>
+    <div class="stat-label">Suporte ao Cliente</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="categorias">
+  <div class="categories-header">
+    <div class="section-tag">O que você encontra</div>
+    <h2 class="section-title">Todas as <em>Categorias</em></h2>
+    <p class="section-sub">Da criação até a segurança — temos o software certo para cada necessidade.</p>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card"><span class="cat-icon">🎨</span><div class="cat-name">Design & Gráfico</div></div>
+    <div class="cat-card"><span class="cat-icon">🎬</span><div class="cat-name">Vídeo & Edição</div></div>
+    <div class="cat-card"><span class="cat-icon">🎵</span><div class="cat-name">Áudio & Música</div></div>
+    <div class="cat-card"><span class="cat-icon">🛡️</span><div class="cat-name">Segurança & Antivírus</div></div>
+    <div class="cat-card"><span class="cat-icon">💻</span><div class="cat-name">Programação & Dev</div></div>
+    <div class="cat-card"><span class="cat-icon">📊</span><div class="cat-name">Office & Produtividade</div></div>
+    <div class="cat-card"><span class="cat-icon">🌐</span><div class="cat-name">Internet & Rede</div></div>
+    <div class="cat-card"><span class="cat-icon">🖥️</span><div class="cat-name">Sistema & Utilidades</div></div>
+    <div class="cat-card"><span class="cat-icon">📷</span><div class="cat-name">Foto & Imagem</div></div>
+    <div class="cat-card"><span class="cat-icon">🎮</span><div class="cat-name">Games & Ferramentas</div></div>
+    <div class="cat-card"><span class="cat-icon">📱</span><div class="cat-name">Mobile & Android</div></div>
+    <div class="cat-card"><span class="cat-icon">☁️</span><div class="cat-name">Cloud & Backup</div></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section style="background: var(--dark2);">
+  <div class="why-grid">
+    <div>
+      <div class="section-tag">Por que escolher</div>
+      <h2 class="section-title">Tudo que você<br><em>precisa</em>, aqui</h2>
+      <p class="section-sub" style="margin-bottom:48px;">Uma plataforma completa com os melhores softwares do mercado, sem burocracia e sem assinatura mensal.</p>
+      <div class="why-features">
+        <div class="why-item">
+          <div class="why-icon">⚡</div>
+          <div class="why-text">
+            <h3>Entrega Imediata</h3>
+            <p>Após o pagamento confirmado, você recebe o acesso instantaneamente por e-mail ou link direto.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">✅</div>
+          <div class="why-text">
+            <h3>100% Original & Ativado</h3>
+            <p>Todos os programas são versões completas e ativadas, sem trial, sem limitações.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">🔄</div>
+          <div class="why-text">
+            <h3>Atualizações Incluídas</h3>
+            <p>Sempre que novos programas forem adicionados à biblioteca, você recebe sem custo extra.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">💬</div>
+          <div class="why-text">
+            <h3>Suporte Especializado</h3>
+            <p>Atendimento rápido via WhatsApp para tirar dúvidas sobre instalação e uso.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual">
+      <div class="big-number">1K+</div>
+      <div class="big-label">Programas Premium</div>
+      <p class="big-sub">Uma coleção enorme de softwares profissionais para Windows, disponível com apenas uma compra.</p>
+      <div class="tags">
+        <span class="tag">Adobe</span><span class="tag">Office</span><span class="tag">Autodesk</span>
+        <span class="tag">CorelDraw</span><span class="tag">Vegas Pro</span><span class="tag">Davinci</span>
+        <span class="tag">Kaspersky</span><span class="tag">WinRAR</span><span class="tag">e muito mais</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="planos" class="pricing-section">
+  <div class="pricing-header">
+    <div class="section-tag">Oferta Única</div>
+    <h2 class="section-title">Tudo por apenas <em>R$ 14,90</em></h2>
+    <p class="section-sub" style="margin: 0 auto;">Sem mensalidade. Pague uma vez, use para sempre.</p>
+  </div>
+  <div style="display:flex; justify-content:center;">
+    <div class="price-card featured" style="max-width:460px; width:100%;">
+      <div class="popular-badge">🔥 Oferta Especial</div>
+      <div class="plan-name">Pacote Completo</div>
+      <div class="plan-price" style="color:var(--red); font-size:80px;"><small style="color:var(--gray)">R$</small> 14<span style="font-size:42px">,90</span></div>
+      <div class="plan-period">pagamento único — acesso vitalício</div>
+      <ul class="plan-features">
+        <li>+1.000 Programas Premium para Windows</li>
+        <li>Acesso Vitalício</li>
+        <li>Download + Link na Nuvem</li>
+        <li>Suporte WhatsApp 24h</li>
+        <li>Atualizações Futuras Incluídas</li>
+        <li>Garantia de 7 Dias</li>
+      </ul>
+      <a href="https://pay.hotmart.com/R105337441C" target="_blank" class="btn-plan btn-plan-red" style="font-size:18px; padding:16px;">Comprar Agora 🔥</a>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section style="background: var(--black);">
+  <div class="guarantee-strip">
+    <div class="guarantee-icon">🛡️</div>
+    <div class="guarantee-text">
+      <h3>Garantia Incondicional de 7 Dias</h3>
+      <p>Se por qualquer motivo você não ficar satisfeito com a sua compra, basta entrar em contato dentro de 7 dias após a compra e devolvemos 100% do seu dinheiro. Sem burocracia, sem perguntas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--dark2);">
+  <div style="text-align:center; margin-bottom:60px;">
+    <div class="section-tag">Dúvidas Frequentes</div>
+    <h2 class="section-title">Perguntas & <em>Respostas</em></h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q">Como recebo os programas após a compra? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Após a confirmação do pagamento, você recebe um link de acesso ao repositório completo diretamente no seu e-mail. O processo é automático e imediato.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Os programas são originais e funcionam normalmente? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Sim! Todos os programas são versões completas e ativadas. Você os instala normalmente no Windows sem qualquer limitação de uso.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Em quantos computadores posso instalar? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Depende do plano escolhido. O plano Básico e Completo permitem uso pessoal. O plano Revenda inclui licença para instalação em múltiplas máquinas.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">O acesso tem prazo de validade? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Não! Seu acesso é vitalício. Uma única compra garante acesso permanente a todos os programas, incluindo novos que forem adicionados à biblioteca.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Quais formas de pagamento são aceitas? <span class="faq-arrow">+</span></button>
+      <div class="faq-a">Aceitamos PIX, cartão de crédito (em até 12x), cartão de débito e boleto bancário.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-final" id="contato">
+  <h2>Pronto para ter<br><em>+1.000 programas</em><br>no seu PC?</h2>
+  <p>Garanta agora o pacote mais completo de softwares premium para Windows. Acesso vitalício, entrega imediata.</p>
+  <a href="https://pay.hotmart.com/R105337441C" target="_blank" class="btn-primary" style="font-size:20px; padding:18px 52px;">
+    🛒 Compre Agora
+  </a>
+  <p style="margin-top:20px; font-size:13px; color:#888;">Ou entre em contato: <a id="email-cta" href="#" style="color:#e82020; text-decoration:none;">grupoaltaimpacto@gmail.com</a></p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="ChatGPT_Image_12_de_abr__de_2026__14_06_16.png" alt="Alta Impacto Digital" class="footer-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+  <div style="display:none; font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:2px;"><span style="color:#fff">Alta</span><span style="color:#e82020">Impacto</span> <span style="color:#c9a227">DIGITAL</span></div>
+  <div class="footer-text">© 2026 Alta Impacto Digital. Todos os direitos reservados.<br><a id="email-footer" href="#" style="color:#e82020; text-decoration:none;">grupoaltaimpacto@gmail.com</a></div>
+  <div class="footer-links">
+    <a href="#">Termos de Uso</a>
+    <a href="#">Privacidade</a>
+    <a href="#">Contato</a>
+  </div>
+</footer>
+
+<script>
+  // Fix email links
+  (function(){
+    var u='grupoaltaimpacto';
+    var d='gmail.com';
+    var email = u + '@' + d;
+    var els = ['email-cta','email-footer'];
+    els.forEach(function(id){
+      var el = document.getElementById(id);
+      if(el){ el.href = 'mailto:' + email; el.textContent = email; }
+    });
+  })();
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.
